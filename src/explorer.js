@@ -21,7 +21,20 @@ class Explorer {
             fill(0,0,255);
         }
         rect(cellWidth * this.X + xOffSet, cellHeight * this.Y + yOffSet, 20, 20);
-        // still need to draw the direction arrow //
+        switch(this.GetCurrentDirection()) {
+            case "up":
+            Image(art.arrowDown, cellWidth * this.X + xOffSet, cellHeight * this.Y + yOffSet - 20, 20, 20);
+            break;
+            case "down":
+            Image(art.arrowDown, cellWidth * this.X + xOffSet, cellHeight * this.Y + yOffSet + 20, 20, 20);
+            break;
+            case "left":
+            Image(art.arrowLeft, cellWidth * this.X + xOffSet - 20, cellHeight * this.Y + yOffSet, 20, 20);
+            break;
+            default:
+            Image(art.arrowRight, cellWidth * this.X + xOffSet + 20, cellHeight * this.Y + yOffSet, 20, 20);
+            break;
+        }
     }
 
     GetNextStep() {
