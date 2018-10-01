@@ -87,3 +87,15 @@ function mouseClicked() {
     }
   }
 }
+
+function keyPressed() {
+  switch(keyCode) {
+    case 71: // G
+      explorersGo = true;
+    break;
+    default:
+      // temp //
+      explorersGo = false;
+    break;
+  }
+}
