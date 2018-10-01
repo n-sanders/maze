@@ -32,6 +32,28 @@ function draw() {
   fill(128,128,128);
   rect(700,0,300,700);
 
+  if (explorersGo) {
+    // display explorer stats
+  }
+  else {
+    // display setup information
+    textSize(32);
+    var message;
+    if (startCellCol == null) {
+      fill(0,255,0);
+      message = "Select starting location.";
+    }
+    else if (goalCellCol == null) {
+      fill(255,0,0);
+      message = "Select goal location.";
+    }
+    else {
+      fill(0);
+      message = "Draw walls.  Press 'g' to start the Explorers.";
+    }
+    text(message, 750, 70, 250, 400);
+  }
+
   for(var i=0; i < cols; i++) {
     for (var j=0; j < rows; j++) {
       fill(boardCells[i][j].fillColor);
